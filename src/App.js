@@ -9,36 +9,44 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import Login from "./pages/login/Login";
 
 function App() {
+ 
+  
   return (
     <Router>
+      <Routes>
       <Topbar />
       <div className="container">
         <Sidebar />
-        <Routes>
+        
           <Route exact path="/" element={<Home />} >
           </Route>
-          <Route path="/users" element={<UserList />}>
-      
+          <Route  path="/login" element={<Login/>} >
           </Route>
-          <Route path="/user/:userId" element={<User/>}>
-      
+          <Route path="/users" element={<UserList />}>
+
+          </Route>
+          <Route path="/user/:userId" element={<User />}>
+
           </Route>
           <Route path="/newUser" element={<NewUser />}>
-      
+
           </Route>
-          <Route path="/products"element={<ProductList />}>
-          
+         
+          <Route path="/movies" element={<ProductList />}>
+
           </Route>
-          <Route path="/product/:productId"element={<Product />}>
-            
+          <Route path="/product/:productId" element={<Product />}>
+
           </Route>
           <Route path="/newproduct" element={<NewProduct />}>
-  
+
           </Route>
-        </Routes>
+        
       </div>
+      </Routes>
     </Router>
   );
 }
