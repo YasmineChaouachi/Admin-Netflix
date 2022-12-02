@@ -20,7 +20,7 @@ const AuthReducer = (state, action) => {
     
     
                 };
-                case "FAILURE":
+                case " LOGIN_FAILURE":
                     return {
         
                         user: null,
@@ -30,6 +30,16 @@ const AuthReducer = (state, action) => {
         
         
                     };
+                    case " LOGOUT":
+                        return {
+            
+                            user: null,
+                            isFetching: false,
+                            error: false,
+            
+            
+            
+                        };
                     default:
                         return {...state};
 
